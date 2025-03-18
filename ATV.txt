@@ -1,0 +1,245 @@
+#include <stdio.h>
+#include <string.h>
+/*
+EX1
+int fatorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    return n * fatorial(n - 1);
+}
+
+int main() {
+    int n = 5;
+    printf("%d! = %d\n", n, fatorial(n));
+    return 0;
+}*/
+/*
+EX2
+int soma_naturais(int n) {
+    if (n == 0)
+        return 0;
+    return n + soma_naturais(n - 1);
+}
+
+int main() {
+    int n = 4;
+    printf("Soma dos primeiros %d números naturais: %d\n", n, soma_naturais(n));
+    return 0;
+}
+*/
+/*
+EX3
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n = 6;
+    printf("Fibonacci(%d) = %d\n", n, fibonacci(n));
+    return 0;
+}
+*/
+
+/*
+EX4
+int potencia(int x, int n) {
+    if (n == 0)
+        return 1;
+    return x * potencia(x, n - 1);
+}
+
+int main() {
+    int x = 2, n = 5;
+    printf("%d^%d = %d\n", x, n, potencia(x, n));
+    return 0;
+}*/
+
+/*
+EX5
+void contagem_regressiva(int n) {
+    if (n < 0) return;
+    printf("%d ", n);
+    contagem_regressiva(n - 1);
+}
+
+int main() {
+    int n = 3;
+    contagem_regressiva(n);
+    return 0;
+}
+*/
+
+/*
+EX6
+int soma_digitos(int n) {
+    if (n == 0)
+        return 0;
+    return (n % 10) + soma_digitos(n / 10);
+}
+
+int main() {
+    int n = 1234;
+    printf("Soma dos dígitos de %d: %d\n", n, soma_digitos(n));
+    return 0;
+}*/
+
+/*
+EX7
+void inverter_string(char str[], int i, int j) {
+    if (i >= j) return;
+    char temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+    inverter_string(str, i + 1, j - 1);
+}
+
+int main() {
+    char str[] = "recursão";
+    int n = strlen(str);
+    inverter_string(str, 0, n - 1);
+    printf("String invertida: %s\n", str);
+    return 0;
+}
+*/
+/*
+
+int palindromo(char str[], int i, int j) {
+    if (i >= j)
+        return 1;
+    if (str[i] != str[j])
+        return 0;
+    return palindromo(str, i + 1, j - 1);
+}
+
+int main() {
+    char str[] = "arara";
+    int n = strlen(str);
+    if (palindromo(str, 0, n - 1))
+        printf("É um palíndromo.\n");
+    else
+        printf("Não é um palíndromo.\n");
+    return 0;
+}
+*/
+/*
+
+EX9
+int mdc(int a, int b) {
+    if (b == 0)
+        return a;
+    return mdc(b, a % b);
+}
+
+int main() {
+    int a = 48, b = 18;
+    printf("MDC de %d e %d: %d\n", a, b, mdc(a, b));
+    return 0;
+}
+*/
+
+/*
+int multiplicar(int a, int b) {
+    if (b == 0)
+        return 0;
+    return a + multiplicar(a, b - 1);
+}
+EX10
+int main() {
+    int a = 4, b = 5;
+    printf("%d * %d = %d\n", a, b, multiplicar(a, b));
+    return 0;
+}
+*/
+/*
+EX11
+int contar_caracteres(char str[], char c, int i) {
+    if (str[i] == '\0')
+        return 0;
+    if (str[i] == c)
+        return 1 + contar_caracteres(str, c, i + 1);
+    return contar_caracteres(str, c, i + 1);
+}
+
+int main() {
+    char str[] = "abracadabra";
+    char c = 'a';
+    printf("Caractere '%c' aparece %d vezes.\n", c, contar_caracteres(str, c, 0));
+    return 0;
+}
+*/
+/*
+EX12
+int soma_array(int arr[], int n) {
+    if (n == 0)
+        return 0;
+    return arr[n - 1] + soma_array(arr, n - 1);
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Soma dos elementos do array: %d\n", soma_array(arr, n));
+    return 0;
+}*/
+
+/*
+EX13
+int primo(int n, int i) {
+    if (n <= 1)
+        return 0;
+    if (i == 1)
+        return 1;
+    if (n % i == 0)
+        return 0;
+    return primo(n, i - 1);
+}
+
+int main() {
+    int n = 7;
+    if (primo(n, n / 2))
+        printf("%d é primo.\n", n);
+    else
+        printf("%d não é primo.\n", n);
+    return 0;
+}*/
+/*
+EX14
+void decimal_para_binario(int n) {
+    if (n == 0)
+        return;
+    decimal_para_binario(n / 2);
+    printf("%d", n % 2);
+}
+
+int main() {
+    int n = 10;
+    printf("Binário de %d: ", n);
+    if (n == 0)
+        printf("0");
+    else
+        decimal_para_binario(n);
+    printf("\n");
+    return 0;
+}
+*/
+/*
+EX15
+void imprimir_pares(int n) {
+    if (n < 0) return;
+    if (n % 2 == 0)
+        printf("%d ", n);
+    imprimir_pares(n - 1);
+}
+
+int main() {
+    int n = 6;
+    printf("Números pares de 0 a %d: ", n);
+    imprimir_pares(n);
+    printf("\n");
+    return 0;
+}
+*/
+
+
